@@ -1,8 +1,8 @@
-const { getWeatherData } = require('../app/weather.js');
-const config = require('../app/config.json');
+const { getWeatherData } = require('../weather.js');
+const config = require('../config.json');
 const axios = require('axios');
 
-jest.mock('../app/config.json', () => {
+jest.mock('../config.json', () => {
     return {
         OPENWEATHERMAP_API_KEY: 'mock-api-key',
     };
