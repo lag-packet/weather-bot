@@ -8,6 +8,7 @@ A discord bot using discordjs and a weather api.
 $ npm init -y
 $ npm install discord.js
 $ npm install --save-dev eslint
+$ npm install cross-fetch
 $ node index.js
 ```
 
