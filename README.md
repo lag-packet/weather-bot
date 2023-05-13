@@ -1,8 +1,19 @@
 # weather-bot
 
-# How to run
+A discord bot using discordjs and a weather api.
 
-`$ npm init -y`
-`$ npm install discord.js`
-`$ npm start`
+## How to run
 
+```
+$ npm init -y
+$ npm install discord.js
+$ npm install --save-dev eslint
+$ node index.js
+```
+
+Or if using package.json
+
+```
+$ npm install
+$ node .
+```
