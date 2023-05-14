@@ -1,4 +1,4 @@
-const { getWeatherData } = require('../weather.js');
+const { getWeatherData } = require('../weatherApi.js');
 const config = require('../config.json');
 const axios = require('axios');
 
