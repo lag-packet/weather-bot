@@ -10,7 +10,7 @@ $ node deploy-commands.js # run this when updates made to commands/initial run t
 $ node .
 ```
 
--- Keep in mind that this project does not include a config! Here is a starter `config.json` config where you must fill out with your own respective information:
+- Keep in mind that this project does not include a config! Here is a starter `config.json` config where you must fill out with your own respective information:
 ```
 {
     "token": {your discord token},
