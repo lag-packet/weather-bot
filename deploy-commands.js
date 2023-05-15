@@ -15,6 +15,10 @@ for (const folder of commandFolders) {
 	// Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPath, file);
+		//console.log(`path: ${filePath}`);
+		if (filePath.includes('\\test')) {
+			continue; // Default: Don't want test commands, remove this 'if' statement 
+		}			  // If you want to implement Test commands if you want test commands.
 		const command = require(filePath);
 		if ('data' in command && 'execute' in command) {
 			console.log(`registered: ${command.data.name}`);
