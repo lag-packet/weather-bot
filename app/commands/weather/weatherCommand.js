@@ -5,27 +5,20 @@ const { OPENWEATHERMAP_API_KEY } = require('../../config.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('weather')
-		.setDescription('Provides weather information.'),
-	async execute(interaction) {
-		await interaction.reply(`Weather command!`);
-	},
-};
-
-
-
-
-/*{
-	data: new SlashCommandBuilder()
-		.setName('weather')
-		.setDescription('Provides weather information for the specified city.')
+		.setDescription('Provides weather information.')
 		.addStringOption(option =>
 			option.setName('city')
-				.setDescription('The city to get the weather information for.')
+				.setDescription('The city')
 				.setRequired(true)),
 	async execute(interaction) {
 		const city = interaction.options.getString('city');
-		// Fetch the weather data for the given city using your getWeatherData function
-		const weatherData = await getWeatherData(city, OPENWEATHERMAP_API_KEY);
-		return interaction.reply(`Weather data for ${city}: ${weatherData}`);
+		if (!city) {
+			return await interaction.reply('Please provide a valid city.');
+		}
+		const city_weather_data = await getWeatherData(city, OPENWEATHERMAP_API_KEY);
+		const kelvin = city_weather_data.main.temp;
+		const fahrenheit = Math.floor((kelvin - 273.15) * 9/5 + 32);
+		await interaction.reply(`The beautiful city of ${city_weather_data.name} is currently ${fahrenheit}° fahrenheit!`);
 	},
-};*/
+};
+
